@@ -581,12 +581,33 @@
         </section>
 
         <footer>
-            <p>© 2025 东方文理大学招生办公室</p>
-            <p>最后更新：2025年4月5日</p>
-        </footer>
-    </div>
+    <p>© 2025 东方文理大学招生办公室</p>
+    <p>最后更新：2025年4月5日</p>
+    <button id="external-link-btn" style="margin-top: 15px; padding: 10px 20px; background-color: #1a5276; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
+        访问白话文版名单
+    </button>
+</footer>
 
-    <script>
+<script>
+    // 添加跳转按钮功能
+    document.getElementById('external-link-btn').addEventListener('click', function() {
+        window.location.href = 'https://king666-666.github.io/YeJi_university_baihuawenmindan/';
+    });
+    
+    // 原有代码保持不变
+    document.getElementById('enter-btn').addEventListener('click', function() {
+        document.getElementById('start-page').classList.add('hidden');
+        document.getElementById('main-content').style.display = 'block';
+        window.scrollTo(0, 0);
+    });
+    
+    window.addEventListener('load', function() {
+        if(window.location.hash === '#entered') {
+            document.getElementById('start-page').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+        }
+    });
+</script>
         // 点击进入按钮后的效果
         document.getElementById('enter-btn').addEventListener('click', function() {
             // 淡出开始页面
